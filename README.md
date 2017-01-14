@@ -14,8 +14,11 @@ A simple wireless sensor node.
 The plan was to just quickly throw together a sensor, an MCU, a wireless module and a battery.
 
 ### MCU selection
-I choose to go with the EFM32ZG222F32, because it was fairly cheap and seemed to have good documentation.
+I choose to go with the EFM32ZG222F32, because it was fairly cheap, low power and seemed to have good documentation.
+As a bonus it has AES encryption functions, which makes the radio selection easier.
 I also checked out Silicon Labs IDE and quite liked it.
+
+Other candidates where the LPC81/2 (higher power and no AES) and the STM32F03 (no AES).
 
 ### Sensor selection
 Adafruit Si7021 breackout board.
@@ -37,6 +40,9 @@ VDD got 1µF and the power supply for TXM and TXP got an LC filter with 220 nH a
 
 ### I2C
 I have not checked the maximum speed at which I can the run the bus and I have not calculated the best value for the I2C pull-ups yet.
+
+The address of the Si7021 is 0b1000000x, speeds: max 400 kHz; clock strechting over 100 kHz.
+The address of the Si4012 is 0b1110000x (configurable) and the speeds supported are 100 kbps and 400 kbps.
 
 ### Antenna
 I have not calculated the best size for the antenna yet.
