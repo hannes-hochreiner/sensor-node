@@ -24,3 +24,19 @@ My preference would have been to use the sensor without the breackout board, but
 
 ### Wireless chip selection
 The Si4012, because it is cheap and has very good documentation.
+
+## Details
+
+### Power and decoupling for the EFM32ZG
+I found the recommended power and decoupling setup in Silicon Labs' "AN0002 Hardware Design Considerations".
+The summary is, VSS go directly to ground, VDD_DREG gets 0.1 µF and 10 µF, DECOUPLE gets 1 µF, IOVDD get 0.1 µF each and one 10 µF, and AVDD get 10 nF each and one 10 µF.
+
+### Power and decoupling for the Si4012
+I followed the recommendation of the datasheet.
+VDD got 1µF and the power supply for TXM and TXP got an LC filter with 220 nH and 0.5 pF resulting in a band pass of about 480 MHz.
+
+### I2C
+I have not checked the maximum speed at which I can the run the bus and I have not calculated the best value for the I2C pull-ups yet.
+
+### Antenna
+I have not calculated the best size for the antenna yet.
