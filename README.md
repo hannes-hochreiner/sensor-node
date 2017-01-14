@@ -38,11 +38,62 @@ The summary is, VSS go directly to ground, VDD_DREG gets 0.1 µF and 10 µF, DEC
 I followed the recommendation of the datasheet.
 VDD got 1µF and the power supply for TXM and TXP got an LC filter with 220 nH and 0.5 pF resulting in a band pass of about 480 MHz.
 
-### I2C
-I have not checked the maximum speed at which I can the run the bus and I have not calculated the best value for the I2C pull-ups yet.
+### Power and decoupling for the Si7021
+Ground was connected to a GPIO to be able to disable the module when it is not in use.
+Decoupling has to be checked.
 
-The address of the Si7021 is 0b1000000x, speeds: max 400 kHz; clock strechting over 100 kHz.
-The address of the Si4012 is 0b1110000x (configurable) and the speeds supported are 100 kbps and 400 kbps.
+### External oscillators
+I figured that I did not need any external oscillators since the communication on the board worked over I2C (which has a clock signal) and the radio claimed to have an internal oscillator that was precise enough.
+
+### I2C
+The three major things to consider with I2C seemed to me to be the addresses that are used, the speed the modules can handle and the pull-ups that are required.
+
+Addresses and speeds are fairly easy to obtain.
+A quick look into the datasheets told me the following:
+
+  * Si7021: address: 0b1000000x; speeds: max 400 kHz; does clock strechting over 100 kHz.
+  * Si4012: address: 0b1110000x (configurable); speeds: 100 kbps and 400 kbps.
+
+When it comes to the pull-ups, it gets a little bit trickier.
+However, I found a lot of documentation on the net explaining how to calculate the suitable intervals.
+I used the Texas Instruments Application Report SLVA689 from February 2015.
+
+I started out by calculating the maximum value, which depends essentially on the bus capacitance and the speed.
+The bus capacitance is the capacitance of the pins plus that of the trace.
+One problem I had was that I was not able to find any values for the capacitance the pins of my chosen chips added to the bus in the datasheets.
+After investigating the topic for a while, I concluded that 10 pF should be a fairly conservative assumption.
+
+To calculate the trace capacitance, I used the online calculator of the [Missouri University of Science and Technology](http://emclab.mst.edu/pcbtlc2/microstrip/).
+The required parameters I obtained from OSHPark ([2 Layer Prototype](http://docs.oshpark.com/services/two-layer/), [2 Layer 2oz 0.8mm](http://docs.oshpark.com/services/two-layer-hhdc/)).
+I assumed a trace width of 10 mils.
+
+  * <0.5 pF / cm for the 2 layer prototype service
+  * <0.6 pF / cm for the 2 layer 2 oz 0.8mm service
+
+Given that there were three ICs on the bus and that the trace length would be smaller 3 cm, I estimated that the bus capacitance should be smaller 35 pF.
+From that, I calculated the maximum resistance for the pull-ups at different speeds.
+
+  * 33 kOhm for 100 kHz
+  * 10 kOhm for 400 kHz
+
+I tried calculating the minimum values for the pull-up resistors for all ICs.
+However, only the datasheet of the Si7021 provided the required values.
+The minimum resistance for the Si7021 was 1.1 kOhm.
+I took this value as a representative value of all involved ICs.
+
+In the end, I decided to go with 400 kHz transmission speed using 10 kOhm pull-ups.
+One thing to note is that the Si4012 had a 50 kOhm integrated pull-up.
+Hence the 10 kOhm would effectively only be about 8.5 kOhm.
+I figured that this should give me an additional margin, but it was also something I had to consider at the time of calculating the battery life.
 
 ### Antenna
 I have not calculated the best size for the antenna yet.
+
+### SWD
+yet to design
+
+### UART
+yet to design
+
+### status LEDs
+yet to design
