@@ -336,9 +336,6 @@ NoConn ~ 5250 2700
 NoConn ~ 5450 2700
 NoConn ~ 5550 2700
 NoConn ~ 5650 2700
-NoConn ~ 5750 2700
-NoConn ~ 5850 2700
-NoConn ~ 5950 2700
 NoConn ~ 6400 3150
 NoConn ~ 6400 3250
 NoConn ~ 6400 3350
@@ -361,7 +358,6 @@ NoConn ~ 5950 4700
 NoConn ~ 5650 4700
 NoConn ~ 5550 4700
 NoConn ~ 5250 4700
-NoConn ~ 5150 4700
 NoConn ~ 5050 4700
 NoConn ~ 4950 4700
 NoConn ~ 4850 4700
@@ -716,4 +712,67 @@ Wire Wire Line
 	5450 4850 5450 4700
 Wire Wire Line
 	5450 4850 6500 4850
+$Comp
+L CortexDebug CD?
+U 1 1 58832D91
+P 2300 6550
+F 0 "CD?" H 2800 6200 60  0000 C CNN
+F 1 "CortexDebug" H 2300 6550 60  0000 C CNN
+F 2 "" H 2600 6450 60  0001 C CNN
+F 3 "" H 2600 6450 60  0001 C CNN
+	1    2300 6550
+	1    0    0    -1  
+$EndComp
+Text Label 5950 2700 1    60   ~ 0
+SWCLK
+Text Label 5850 2700 1    60   ~ 0
+SWDIO
+Text Label 5750 2700 1    60   ~ 0
+SWO
+Text Label 3100 6350 0    60   ~ 0
+SWDIO
+Text Label 3100 6450 0    60   ~ 0
+SWCLK
+Text Label 3100 6550 0    60   ~ 0
+SWO
+Text Label 3100 6750 0    60   ~ 0
+~RESET
+$Comp
+L GND #PWR?
+U 1 1 58833835
+P 1400 6900
+F 0 "#PWR?" H 1400 6650 50  0001 C CNN
+F 1 "GND" H 1400 6750 50  0000 C CNN
+F 2 "" H 1400 6900 50  0000 C CNN
+F 3 "" H 1400 6900 50  0000 C CNN
+	1    1400 6900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 6450 1400 6900
+Wire Wire Line
+	1400 6750 1500 6750
+Wire Wire Line
+	1400 6550 1500 6550
+Connection ~ 1400 6750
+Wire Wire Line
+	1400 6450 1500 6450
+Connection ~ 1400 6550
+$Comp
+L +3V3 #PWR?
+U 1 1 58833AC8
+P 1400 6150
+F 0 "#PWR?" H 1400 6000 50  0001 C CNN
+F 1 "+3V3" H 1400 6290 50  0000 C CNN
+F 2 "" H 1400 6150 50  0000 C CNN
+F 3 "" H 1400 6150 50  0000 C CNN
+	1    1400 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 6150 1400 6350
+Wire Wire Line
+	1400 6350 1500 6350
+Text Label 5150 4700 3    60   ~ 0
+~RESET
 $EndSCHEMATC
