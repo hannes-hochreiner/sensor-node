@@ -1,0 +1,20 @@
+{
+  "name": "antenna-design",
+  "version": "1.0.0",
+  "description": "An loop antenna design tool.",
+  "main": "bld/index.js",
+  "scripts": {
+    "build": "babel src --out-dir bld",
+    "start": "npm run build && node bld/index",
+    "test": "npm run build && babel src_test --out-dir bld_test && jasmine JASMINE_CONFIG_PATH=jasmine.json",
+    "docs": "rm -r docs && jsdoc -c jsdoc.json"
+  },
+  "author": "Hannes Hochreiner <hannes@hochreiner.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-latest": "^6.22.0",
+    "jasmine": "^2.5.3",
+    "jsdoc": "^3.4.3"
+  }
+}
