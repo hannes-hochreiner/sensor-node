@@ -3,7 +3,6 @@
 */
 
 let speedOfLight = 299792458; // m/s
-let conductivityOfCopper = 5.96e7; // S/m
 let permeabilityOfCopper = 1.256629e-6; // H/m
 let permeabilityVacuum = 4 * Math.PI * 1e-7; // H/m
 
@@ -38,14 +37,15 @@ export function calculateRadiationResistance(area, frequency, velocityFactor = 1
   return 320 * Math.pow(Math.PI / (velocityFactor * speedOfLight) * frequency, 4) * Math.pow(area, 2);
 }
 
-/** Calculate the loss resistance.
+/** Calculate the trace resistance.
 * @param {number} perimeter perimeter of the loop antenna / m
-* @param {number} effectiveTraceRadius effective radius of the trace / m
-* @param {frequency} frequency / Hz
+* @param {number} effectiveTraceCircumference effective radius of the trace / m
+* @param {number} frequency frequence / Hz
+* @param {number} conductivityOfCopper=5.96e7 conductivity of copper / S/m
 * @return {number} loss resistance / Ohm
 */
-export function calculateLossResistance(perimeter, effectiveTraceRadius, frequency) {
-  return perimeter * Math.sqrt(Math.PI * frequency * permeabilityOfCopper / conductivityOfCopper) / (2 * Math.PI * effectiveTraceRadius);
+export function calculateTraceResistance(perimeter, effectiveTraceCircumference, frequency, conductivityOfCopper = 5.96e7) {
+  return perimeter * Math.sqrt(Math.PI * frequency * permeabilityVacuum / conductivityOfCopper) / effectiveTraceCircumference;
 }
 
 /** Calculate the inductance of a trace rectangle.

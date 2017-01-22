@@ -13,8 +13,12 @@ describe("antenna design util", () => {
     expect(Math.round(adu.calculateRadiationResistance(40e-3 * 25e-3, 434e6, 0.82) * 1e3) / 1e3).toBe(0.303);
   });
 
-  it("should calculate the loss resistance", () => {
-    expect(Math.round(adu.calculateLossResistance(2 * (34e-3 + 12e-3), 0.25225e-3, 434000000) * 1e3) / 1e3).toBe(0.311);
+  it("should calculate the trace resistance according to Microchip AN831", () => {
+    expect(Math.round(adu.calculateTraceResistance(2 * (34e-3 + 12e-3), 2 * 1e-3, 434e6, 5.7e7) * 1e3) / 1e3).toBe(0.252);
+  });
+
+  it("should calculate the trace resistance according to Silicon Labs AN639", () => {
+    expect(Math.round(adu.calculateTraceResistance(2 * (40e-3 + 25e-3), 2 * 1e-3, 434e6, 5.8e7) * 1e3) / 1e3).toBe(0.353);
   });
 
   it("should calculate the inductance", () => {
