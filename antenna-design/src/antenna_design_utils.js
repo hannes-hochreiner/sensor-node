@@ -59,5 +59,6 @@ export function calculateInductance(a, b, traceHeight, traceWidth) {
   let sumAlphaBeta = (traceWidth + traceHeight);
   let d = Math.sqrt(a * a + b * b);
 
+  // 4e-7 = µ0 / pi
   return 4e-7 * ((a + b) * Math.log(2 * a * b / sumAlphaBeta) - a * Math.log(a + d) - b * Math.log(b + d) - (a + b) / 2 + 2 * d + 0.447 * sumAlphaBeta);
 }
