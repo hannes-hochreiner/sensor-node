@@ -31,10 +31,11 @@ export function calculateSecondaryLoopLength(frequency, seriesResistance, inputI
 /** Calculate the radiation resistance.
 * @param {number} area area inclosed by the loop antenna / m²
 * @param {number} frequency frequency / Hz
+* @param {number} velocityFactor empirical factor taking into account that the loop is mounted on a substrate
 * @return {number} radiation resistance / Ohm
 */
-export function calculateRadiationResistance(area, frequency) {
-  return 320 * Math.pow(Math.PI / speedOfLight * frequency, 4) * Math.pow(area, 2);
+export function calculateRadiationResistance(area, frequency, velocityFactor = 1) {
+  return 320 * Math.pow(Math.PI / (velocityFactor * speedOfLight) * frequency, 4) * Math.pow(area, 2);
 }
 
 /** Calculate the loss resistance.

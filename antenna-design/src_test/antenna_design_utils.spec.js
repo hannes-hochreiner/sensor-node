@@ -5,8 +5,12 @@ describe("antenna design util", () => {
     expect(adu.calculateEffectiveRadius(0.035e-3, 1e-3)).toBe(0.25225e-3);
   });
 
-  it("should calculate the radiation resistance", () => {
-    expect(Math.round(adu.calculateRadiationResistance(34e-3 * 12e-3, 434000000) * 1e4) / 1e4).toBe(0.0228);
+  it("should calculate the radiation resistance according to Microchip AN831", () => {
+    expect(Math.round(adu.calculateRadiationResistance(34e-3 * 12e-3, 434e6) * 1e4) / 1e4).toBe(0.0228);
+  });
+
+  it("should calculate the radiation resistance according to Silicon Labs AN639", () => {
+    expect(Math.round(adu.calculateRadiationResistance(40e-3 * 25e-3, 434e6, 0.82) * 1e3) / 1e3).toBe(0.303);
   });
 
   it("should calculate the loss resistance", () => {
