@@ -62,3 +62,12 @@ export function calculateInductance(a, b, traceHeight, traceWidth) {
   // 4e-7 = µ0 / pi
   return 4e-7 * ((a + b) * Math.log(2 * a * b / sumAlphaBeta) - a * Math.log(a + d) - b * Math.log(b + d) - (a + b) / 2 + 2 * d + 0.447 * sumAlphaBeta);
 }
+
+/** Calculate the required capacitance for an LC circuit given a certain inductance and frequency.
+* @param {number} inductance inductance / H
+* @param {number} frequency frequency / Hz
+* @return {number} capacitance / C
+*/
+export function calculateCapacitance(inductance, frequency) {
+  return 1 / (Math.pow(2 * Math.PI * frequency, 2) * inductance);
+}

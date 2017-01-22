@@ -29,6 +29,10 @@ describe("antenna design util", () => {
     expect(Math.abs(adu.calculateInductance(40e-3, 25e-3, 0.035e-3, 1e-3) / 102.64e-9 - 1)).toBeLessThan(0.05);
   });
 
+  it("should calculate the required capacitance", () => {
+    expect(Math.round(adu.calculateCapacitance(102.64e-9, 434e6) * 1e14) / 1e14).toEqual(1.31e-12);
+  });
+
   it("should calculate the secondary loop length", () => {
     expect(Math.round(adu.calculateSecondaryLoopLength(434000000, 0.275, 1000) * 1e4) / 1e4).toBe(13.8e-3);
   });
