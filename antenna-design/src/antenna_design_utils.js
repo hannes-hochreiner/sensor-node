@@ -71,3 +71,13 @@ export function calculateInductance(a, b, traceHeight, traceWidth) {
 export function calculateCapacitance(inductance, frequency) {
   return 1 / (Math.pow(2 * Math.PI * frequency, 2) * inductance);
 }
+
+/** Calculate the equivalent series resistance of a capacitor with a given Q factor at a given frequency.
+* @param {number} capacitance capacitance / C
+* @param {number} frequency frequency / Hz
+* @param {number} q Q factor
+* @return {number} esr / Ohm
+*/
+export function calculateEquivalentSeriesResistance(capacitance, frequency, q) {
+  return 1 / (2 * Math.PI * frequency * capacitance * q);
+}

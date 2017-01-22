@@ -44,4 +44,8 @@ describe("antenna design util", () => {
   it("should calculate the secondary loop length", () => {
     expect(Math.round(adu.calculateSecondaryLoopLength(434000000, 0.275, 1000) * 1e4) / 1e4).toBe(13.8e-3);
   });
+
+  it("should calculate the equivalent series resistance", () => {
+    expect(Math.round(adu.calculateEquivalentSeriesResistance(1.31e-12, 434e6, 350) * 1e3) / 1e3).toBe(0.8);
+  });
 });
