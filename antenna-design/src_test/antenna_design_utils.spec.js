@@ -1,4 +1,7 @@
 import * as adu from "../bld/antenna_design_utils";
+import * as d3f from "d3-format";
+
+let f3 = d3f.format(".3s");
 
 describe("antenna design util", () => {
   it("calculate the effective radius", () => {
@@ -6,23 +9,23 @@ describe("antenna design util", () => {
   });
 
   it("should calculate the radiation resistance according to Microchip AN831", () => {
-    expect(Math.round(adu.calculateRadiationResistance(34e-3 * 12e-3, 434e6) * 1e4) / 1e4).toBe(0.0228);
+    expect(f3(adu.calculateRadiationResistance(34e-3 * 12e-3, 434e6))).toBe("22.8m");
   });
 
   it("should calculate the radiation resistance according to Silicon Labs AN639", () => {
-    expect(Math.round(adu.calculateRadiationResistance(40e-3 * 25e-3, 434e6, 0.82, 3e8) * 1e3) / 1e3).toBe(0.302);
+    expect(f3(adu.calculateRadiationResistance(40e-3 * 25e-3, 434e6, 0.82, 3e8))).toBe("302m");
   });
 
   it("should calculate the trace resistance according to Microchip AN831", () => {
-    expect(Math.round(adu.calculateTraceResistance(2 * (34e-3 + 12e-3), 2 * 1e-3, 434e6, 5.7e7) * 1e3) / 1e3).toBe(0.252);
+    expect(f3(adu.calculateTraceResistance(2 * (34e-3 + 12e-3), 2 * 1e-3, 434e6, 5.7e7))).toBe("252m");
   });
 
   it("should calculate the trace resistance according to Silicon Labs AN639", () => {
-    expect(Math.round(adu.calculateTraceResistance(2 * (40e-3 + 25e-3), 2 * 1e-3, 434e6, 5.8e7) * 1e3) / 1e3).toBe(0.353);
+    expect(f3(adu.calculateTraceResistance(2 * (40e-3 + 25e-3), 2 * 1e-3, 434e6, 5.8e7))).toBe("353m");
   });
 
   it("should calculate the inductance", () => {
-    expect(Math.round(adu.calculateInductance(10, 10, 0.01, 0.01) * 1e8) / 1e8).toBe(55.53e-6);
+    expect(d3f.format(".4s")(adu.calculateInductance(10, 10, 0.01, 0.01))).toBe("55.53µ");
   });
 
   it("should calculate the same inductance rotating the rectangle by 90 degrees", () => {
@@ -38,14 +41,14 @@ describe("antenna design util", () => {
   });
 
   it("should calculate the required capacitance", () => {
-    expect(Math.round(adu.calculateCapacitance(102.64e-9, 434e6) * 1e14) / 1e14).toEqual(1.31e-12);
+    expect(f3(adu.calculateCapacitance(102.64e-9, 434e6))).toEqual("1.31p");
   });
 
   it("should calculate the secondary loop length", () => {
-    expect(Math.round(adu.calculateSecondaryLoopLength(434000000, 0.275, 1000) * 1e4) / 1e4).toBe(13.8e-3);
+    expect(f3(adu.calculateSecondaryLoopLength(434e6, 0.275, 1000))).toBe("13.8m");
   });
 
   it("should calculate the equivalent series resistance", () => {
-    expect(Math.round(adu.calculateEquivalentSeriesResistance(1.31e-12, 434e6, 350) * 1e3) / 1e3).toBe(0.8);
+    expect(f3(adu.calculateEquivalentSeriesResistance(1.31e-12, 434e6, 350))).toBe("800m");
   });
 });
