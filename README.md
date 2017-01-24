@@ -97,3 +97,14 @@ yet to design
 
 ### status LEDs
 yet to design
+
+### BOM
+  * 1 x 0.5pF capacitor 0805 MC0805N0R5C500CT (0.04 EUR, min 10)
+  * 2 x 10nF capacitor 0805 MC0805B103K500CT (0.02 EUR, min 10)
+  * 4 x 0.1µF capacitor 0805 MC0805F104Z250CT (0.02 EUR, min 10)
+  * 2 x 1µF capacitor 0805 MC0805F105Z160CT (0.03 EUR, min 10)
+  * 4 x 10µF capacitor 0805 MC0805X106K6R3CT (0.08 EUR, min 10)
+  * 2 x 10kOhm resistor 0805 MCWR08X1002FTL (0.01 EUR, min 10)
+  * 1 x 220nH inductor 0805 LQW2BASR22J00L (0.24 EUR, min 5)
+
+total 0.80 EUR
