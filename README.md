@@ -21,9 +21,9 @@ I also checked out Silicon Labs IDE and quite liked it.
 Other candidates where the LPC81/2 (higher power and no AES) and the STM32F03 (no AES).
 
 ### Sensor selection
-Adafruit Si7021 breackout board.
+Adafruit Si7021 breakout board.
 Seems to be a good sensor, which I could get my hands on for a reasonable price.
-My preference would have been to use the sensor without the breackout board, but since it came in a leadless package I needed the breackout board.
+My preference would have been to use the sensor without the breakout board, but since it came in a leadless package I needed the breakout board.
 
 ### Wireless chip selection
 The Si4012, because it is cheap and has very good documentation.
@@ -107,4 +107,17 @@ yet to design
   * 2 x 10kOhm resistor 0805 MCWR08X1002FTL (0.01 EUR, min 10)
   * 1 x 220nH inductor 0805 LQW2BASR22J00L (0.24 EUR, min 5)
 
-total 0.80 EUR
+  * 1 x mcu TQFP48 EFM32ZG222F32 (2.24 EUR)
+  * 1 x rf transmitter MSOP10 Si4012 (1.15 EUR)
+  * 1 x Adafruit Si7021 breakout board (7.50 EUR)
+
+  * 1 x shrouded headers 1.27mm pitch (0.65 EUR)
+  * 1 x battery holder CR2032 (0.59 EUR)
+  * 1 x PCB (~4 EUR)
+  * 1 x box (~3 EUR)
+  * 1 x battery CR2032 (~1 EUR)
+
+passives 0.80 EUR
+actives 10.89 EUR
+others 9.24 EUR
+total 20.93 EUR
