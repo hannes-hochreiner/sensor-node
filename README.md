@@ -92,9 +92,6 @@ I have not calculated the best size for the antenna yet.
 ### SWD
 I added a 10 pin Cortex Debug connector based on the [ARM recommendation](http://infocenter.arm.com/help/topic/com.arm.doc.faqs/attached/13634/cortex_debug_connectors.pdf).
 
-### UART
-yet to design
-
 ### BOM
 
 A detailed bill of materials can be found on a [sub-page](bom.md).
