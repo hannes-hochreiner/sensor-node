@@ -1,0 +1,19 @@
+{
+  "id": "device_R_10k",
+  "description": "resistor 10kOhm",
+  "manufacturer": "Multicomp",
+  "manufacturerItemNumber": "MCWR08X1002FTL",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "2447553",
+      "supplierLink": "https://hbe-shop.de/Art-2447553-MULTICOMP-MCWR08X1002FTL-DICKSCHICHTWIDERSTAND-10K-1-0125W-0805",
+      "datasheet": "http://www.farnell.com/datasheets/1849611.pdf",
+      "price": {
+        "value": 0.01,
+        "currency": "EUR"
+      },
+      "packageSize": 10
+    }
+  ]
+}

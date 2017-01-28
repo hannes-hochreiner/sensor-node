@@ -1,0 +1,21 @@
+{
+  "id": "device_INDUCTOR_220nH",
+  "description": "inductor 220nH",
+  "manufacturer": "Murata",
+  "manufacturerItemNumber": "LQW2BASR22J00L",
+  "manufacturerLink": "http://psearch.en.murata.com/inductor/product/LQW2BASR22J00%23.html",
+  "datasheet": "http://psearch.en.murata.com/inductor/product/LQW2BASR22J00_.pdf",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "2470315",
+      "supplierLink": "https://hbe-shop.de/Art-2470315-MURATA-LQW2BASR22J00L-INDUKTIVITAET-220NH-04A-5-820MHZ",
+      "datasheet": "http://www.farnell.com/datasheets/1888721.pdf",
+      "price": {
+        "value": 0.22,
+        "currency": "EUR"
+      },
+      "packageSize": 10
+    }
+  ]
+}

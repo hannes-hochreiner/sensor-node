@@ -1,0 +1,21 @@
+{
+  "name": "bom-maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bld/index.js",
+  "private": true,
+  "scripts": {
+    "build": "babel src --out-dir bld",
+    "start": "npm run build && node bld/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hannes Hochreiner <hannes@hochreiner.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-latest": "^6.22.0"
+  },
+  "dependencies": {
+    "xml-parser": "^1.2.1"
+  }
+}

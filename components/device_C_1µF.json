@@ -1,0 +1,19 @@
+{
+  "id": "device_C_1µF",
+  "description": "capacitor 1µF",
+  "manufacturer": "Multicomp",
+  "manufacturerItemNumber": "MC0805F105Z160CT",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "1759422",
+      "supplierLink": "https://hbe-shop.de/Art-1759422-MULTICOMP-MC0805F105Z160CT-KONDENSATOR-MLCC-Y5V-1UF-16V-0805",
+      "datasheet": "http://www.farnell.com/datasheets/1901289.pdf",
+      "price": {
+        "value": 0.04,
+        "currency": "EUR"
+      },
+      "packageSize": 10
+    }
+  ]
+}

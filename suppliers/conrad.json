@@ -1,0 +1,11 @@
+{
+  "id": "conrad",
+  "name": "Conrad",
+  "shippingFee": {
+    "valueFee": [
+      {"value": 0, "fee": 5.95},
+      {"value": 300, "fee": 0}
+    ],
+    "currency": "EUR"
+  }
+}

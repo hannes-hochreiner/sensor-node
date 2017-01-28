@@ -97,27 +97,3 @@ yet to design
 
 ### status LEDs
 yet to design
-
-### BOM
-  * 1 x 0.5pF capacitor 0805 MC0805N0R5C500CT (0.04 EUR, min 10)
-  * 2 x 10nF capacitor 0805 MC0805B103K500CT (0.02 EUR, min 10)
-  * 4 x 0.1µF capacitor 0805 MC0805F104Z250CT (0.02 EUR, min 10)
-  * 2 x 1µF capacitor 0805 MC0805F105Z160CT (0.03 EUR, min 10)
-  * 4 x 10µF capacitor 0805 MC0805X106K6R3CT (0.08 EUR, min 10)
-  * 2 x 10kOhm resistor 0805 MCWR08X1002FTL (0.01 EUR, min 10)
-  * 1 x 220nH inductor 0805 LQW2BASR22J00L (0.24 EUR, min 5)
-
-  * 1 x mcu TQFP48 EFM32ZG222F32 (2.24 EUR)
-  * 1 x rf transmitter MSOP10 Si4012 (1.15 EUR)
-  * 1 x Adafruit Si7021 breakout board (7.50 EUR)
-
-  * 1 x shrouded headers 1.27mm pitch (0.65 EUR)
-  * 1 x battery holder CR2032 (0.59 EUR)
-  * 1 x PCB (~4 EUR)
-  * 1 x box (~3 EUR)
-  * 1 x battery CR2032 (~1 EUR)
-
-passives 0.80 EUR
-actives 10.89 EUR
-others 9.24 EUR
-total 20.93 EUR

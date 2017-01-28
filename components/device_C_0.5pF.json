@@ -1,0 +1,19 @@
+{
+  "id": "device_C_0.5pF",
+  "description": "capacitor 0.5pF",
+  "manufacturer": "Multicomp",
+  "manufacturerItemNumber": "MC0805N0R5C500CT",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "1759178",
+      "supplierLink": "https://hbe-shop.de/Art-1759178-MULTICOMP-MC0805N0R5C500CT-KONDENSATOR-MLCC-C0G-NP0-05PF-50V-0805",
+      "datasheet": "http://www.farnell.com/datasheets/1901289.pdf",
+      "price": {
+        "value": 0.04,
+        "currency": "EUR"
+      },
+      "packageSize": 10
+    }
+  ]
+}

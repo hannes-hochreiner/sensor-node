@@ -1,0 +1,21 @@
+{
+  "id": "device_Battery_CR2032Holder",
+  "description": "CR2032 battery holder",
+  "manufacturer": "renata",
+  "manufacturerItemNumber": "HU2032-LF",
+  "manufacturerLink": "http://www.renata.com/industrial-products/battery-holders/",
+  "datasheet": "http://www.renata.com/fileadmin/downloads/productsheets/battery_holders/HU2032-LF.pdf",
+  "suppliers": [
+    {
+      "supplierId": "conrad",
+      "supplierItemNumber": "650612 - 62",
+      "supplierLink": "https://www.conrad.de/de/knopfzellenhalter-1-cr-2032-horizontal-durchsteckmontage-tht-l-x-b-x-h-285-x-20-x-87-mm-renata-701106-650612.html",
+      "datasheet": "http://www.produktinfo.conrad.com/datenblaetter/650000-674999/650612-da-01-en-KNOPFZELLEN_BATTERIEHALTER_HU2032_LF.pdf",
+      "price": {
+        "value": 0.59,
+        "currency": "EUR"
+      },
+      "packageSize": 1
+    }
+  ]
+}

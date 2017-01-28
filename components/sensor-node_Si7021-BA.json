@@ -1,0 +1,19 @@
+{
+  "id": "sensor-node_Si7021-BA_Si7021-BA",
+  "description": "Si7021 humidity sensor breakout board",
+  "manufacturer": "Adafruit",
+  "manufacturerItemNumber": "3251",
+  "manufacturerLink": "https://www.adafruit.com/product/3251",
+  "suppliers": [
+    {
+      "supplierId": "exp-tech",
+      "supplierItemNumber": "EXP-R15-1131",
+      "supplierLink": "http://www.exp-tech.de/adafruit-si7021-temperature-humidity-sensor-breakout-board",
+      "price": {
+        "value": 7.50,
+        "currency": "EUR"
+      },
+      "packageSize": 1
+    }
+  ]
+}

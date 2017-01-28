@@ -1,0 +1,21 @@
+{
+  "id": "sensor-node_CortexDebug",
+  "description": "Cortex Debug shrouded header",
+  "manufacturer": "W+P",
+  "manufacturerItemNumber": "336",
+  "manufacturerLink": "http://wppro.com/content/en/products/idc/box-headers/product/336.html",
+  "datasheet": "http://wppro.com/content/en/products/idc/box-headers/product/336.pdf",
+  "suppliers": [
+    {
+      "supplierId": "conrad",
+      "supplierItemNumber": "1403360 - 62",
+      "supplierLink": "https://www.conrad.de/de/stiftleiste-rastermass-127-mm-polzahl-gesamt-10-w-p-products-1-st-1403360.html",
+      "datasheet": "http://www.produktinfo.conrad.com/datenblaetter/1400000-1499999/001403360-da-01-ml-WANNENSTIFTLEIS__RM_1_27__GER__10P_de_en.pdf",
+      "price": {
+        "value": 0.65,
+        "currency": "EUR"
+      },
+      "packageSize": 1
+    }
+  ]
+}

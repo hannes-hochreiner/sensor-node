@@ -1,0 +1,19 @@
+{
+  "id": "device_C_0.1µF",
+  "description": "capacitor 0.1µF",
+  "manufacturer": "Multicomp",
+  "manufacturerItemNumber": "MC0805F104Z250CT",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "1759167",
+      "supplierLink": "https://hbe-shop.de/Art-1759167-MULTICOMP-MC0805F104Z250CT-KONDENSATOR-MLCC-Y5V-100NF-0805",
+      "datasheet": "http://www.farnell.com/datasheets/1901289.pdf",
+      "price": {
+        "value": 0.02,
+        "currency": "EUR"
+      },
+      "packageSize": 10
+    }
+  ]
+}

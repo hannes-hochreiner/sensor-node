@@ -1,0 +1,19 @@
+{
+  "id": "device_C_10nF",
+  "description": "capacitor 10nF",
+  "manufacturer": "Multicomp",
+  "manufacturerItemNumber": "MC0805B103K500CT",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "1759246",
+      "supplierLink": "https://hbe-shop.de/Art-1759246-MULTICOMP-MC0805B103K500CT-KONDENSATOR-MLCC-X7R-10NF-50V-0805",
+      "datasheet": "http://www.farnell.com/datasheets/1901289.pdf",
+      "price": {
+        "value": 0.02,
+        "currency": "EUR"
+      },
+      "packageSize": 10
+    }
+  ]
+}

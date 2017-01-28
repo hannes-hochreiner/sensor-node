@@ -1,0 +1,19 @@
+{
+  "id": "device_C_1pF",
+  "description": "capacitor 1pF",
+  "manufacturer": "AVX",
+  "manufacturerItemNumber": "08052U1R0BAT2A",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "7568398",
+      "supplierLink": "https://hbe-shop.de/Art-7568398-AVX-08052U1R0BAT2A-HF-KONDENSATOR-C0G-NP0-1PF-200V-0805",
+      "datasheet": "http://www.farnell.com/datasheets/319610.pdf",
+      "price": {
+        "value": 0.7,
+        "currency": "EUR"
+      },
+      "packageSize": 5
+    }
+  ]
+}

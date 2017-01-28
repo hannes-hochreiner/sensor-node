@@ -1,0 +1,20 @@
+{
+  "id": "sensor-node_EFM32ZG222",
+  "description": "EFM32ZG222F32 QFP48 microcontroller",
+  "manufacturer": "Silicon Labs",
+  "manufacturerItemNumber": "EFM32ZG222F32-QFP48",
+  "manufacturerLink": "http://www.silabs.com/products/mcu/32-bit/efm32-zero-gecko/pages/efm32-zero-gecko.aspx",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "2503912",
+      "supplierLink": "https://hbe-shop.de/Art-2503912-SILICON-LABS-EFM32ZG222F32-QFP48T-MCU-32BIT-CORTEX-M0-24MHZ-TQFP-48",
+      "datasheet": "http://www.farnell.com/datasheets/1959061.pdf",
+      "price": {
+        "value": 2.24,
+        "currency": "EUR"
+      },
+      "packageSize": 1
+    }
+  ]
+}

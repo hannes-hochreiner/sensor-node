@@ -1,0 +1,12 @@
+{
+  "id": "hbe",
+  "name": "HBE",
+  "shippingFee": {
+    "valueFee": [
+      {"value": 0, "fee": 8.45},
+      {"value": 25, "fee": 5.95},
+      {"value": 90, "fee": 0}
+    ],
+    "currency": "EUR"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "sensor-node_Si4012",
+  "description": "Si4012 rf transmitter",
+  "manufacturer": "Silicon Labs",
+  "manufacturerItemNumber": "Si4012",
+  "manufacturerLink": "http://www.silabs.com/products/wireless/EZRadio/Pages/si4012.aspx",
+  "datasheet": "https://www.silabs.com/Support%20Documents/TechnicalDocs/Si4012.pdf",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "2414359",
+      "supplierLink": "https://hbe-shop.de/Art-2414359-SILICON-LABS-SI4012-C1001GT-RF-TRANSMITTER-27-960MHZ-MSOP-10",
+      "datasheet": "http://www.farnell.com/datasheets/1810297.pdf",
+      "price": {
+        "value": 1.15,
+        "currency": "EUR"
+      },
+      "packageSize": 1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "exp-tech",
+  "name": "EXP-TECH",
+  "shippingFee": {
+    "valueFee": [
+      {"value": 0, "fee": 3.5}
+    ],
+    "currency": "EUR"
+  }
+}

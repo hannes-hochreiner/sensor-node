@@ -1,0 +1,19 @@
+{
+  "id": "device_C_10µF",
+  "description": "capacitor 10µF",
+  "manufacturer": "Multicomp",
+  "manufacturerItemNumber": "MC0805X106K6R3CT",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "2320852",
+      "supplierLink": "https://hbe-shop.de/Art-2320852-MULTICOMP-MC0805X106K6R3CT-KONDENSATOR-MLCC-X5R-10UF-63V-0805",
+      "datasheet": "http://www.farnell.com/datasheets/1870456.pdf",
+      "price": {
+        "value": 0.08,
+        "currency": "EUR"
+      },
+      "packageSize": 10
+    }
+  ]
+}
