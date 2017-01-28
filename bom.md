@@ -9,7 +9,6 @@ amount|description|manufacturer|price per unit / EUR
 1|[inductor 220nH](https://hbe-shop.de/Art-2470315-MURATA-LQW2BASR22J00L-INDUKTIVITAET-220NH-04A-5-820MHZ)|Murata|0.22
 1|[capacitor 0.5pF](https://hbe-shop.de/Art-1759178-MULTICOMP-MC0805N0R5C500CT-KONDENSATOR-MLCC-C0G-NP0-05PF-50V-0805)|Multicomp|0.04
 2|[capacitor 1pF](https://hbe-shop.de/Art-7568398-AVX-08052U1R0BAT2A-HF-KONDENSATOR-C0G-NP0-1PF-200V-0805)|AVX|0.7
-1|device_LED|n/a|n/a
 2|[capacitor 1µF](https://hbe-shop.de/Art-1759422-MULTICOMP-MC0805F105Z160CT-KONDENSATOR-MLCC-Y5V-1UF-16V-0805)|Multicomp|0.04
 4|[capacitor 0.1µF](https://hbe-shop.de/Art-1759167-MULTICOMP-MC0805F104Z250CT-KONDENSATOR-MLCC-Y5V-100NF-0805)|Multicomp|0.02
 3|[capacitor 10µF](https://hbe-shop.de/Art-2320852-MULTICOMP-MC0805X106K6R3CT-KONDENSATOR-MLCC-X5R-10UF-63V-0805)|Multicomp|0.08
