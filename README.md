@@ -97,3 +97,7 @@ yet to design
 
 ### status LEDs
 yet to design
+
+### BOM
+
+A detailed bill of materials can be found on a [sub-page](bom.md).
