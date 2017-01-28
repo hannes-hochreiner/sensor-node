@@ -95,9 +95,6 @@ I added a 10 pin Cortex Debug connector based on the [ARM recommendation](http:/
 ### UART
 yet to design
 
-### status LEDs
-yet to design
-
 ### BOM
 
 A detailed bill of materials can be found on a [sub-page](bom.md).
