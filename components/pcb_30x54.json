@@ -1,0 +1,18 @@
+{
+  "id": "pcb_30x54",
+  "description": "PCB 30mm x 54mm 2oz",
+  "manufacturer": "OSH Park",
+  "manufacturerItemNumber": "2oz service",
+  "suppliers": [
+    {
+      "supplierId": "oshpark",
+      "supplierItemNumber": "2oz service",
+      "supplierLink": "http://docs.oshpark.com/services/two-layer-hhdc/",
+      "price": {
+        "value": 4,
+        "currency": "EUR"
+      },
+      "packageSize": 3
+    }
+  ]
+}

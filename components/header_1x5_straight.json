@@ -1,0 +1,19 @@
+{
+  "id": "header_1x5_straight",
+  "description": "header 1x5 straight",
+  "manufacturer": "Multicomp",
+  "manufacturerItemNumber": "TWN4-2-6W",
+  "suppliers": [
+    {
+      "supplierId": "hbe",
+      "supplierItemNumber": "1593414",
+      "supplierLink": "https://hbe-shop.de/Art-1593414-MULTICOMP-2211S-05G-STECKER1-REIHVERT5KONT",
+      "datasheet": "http://www.farnell.com/datasheets/1518407.pdf",
+      "price": {
+        "value": 0.17,
+        "currency": "EUR"
+      },
+      "packageSize": 1
+    }
+  ]
+}

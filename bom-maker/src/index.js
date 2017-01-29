@@ -22,7 +22,6 @@ function getComponents(id) {
     res.push({id: id});
   }
 
-  console.log(res);
   return res;
 }
 
@@ -32,7 +31,11 @@ function componentToLine(c) {
   out.push(`${c.count}`);
 
   if (c.description) {
-    out.push(`[${c.description}](${c.suppliers[0].supplierLink})`);
+    if (c.suppliers[0].supplierLink) {
+      out.push(`[${c.description}](${c.suppliers[0].supplierLink})`);
+    } else {
+      out.push(`${c.description}`);
+    }
   } else {
     out.push(c.id);
   }

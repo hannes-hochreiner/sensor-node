@@ -1,0 +1,10 @@
+{
+  "id": "local",
+  "name": "local shop",
+  "shippingFee": {
+    "valueFee": [
+      {"value": 0, "fee": 0}
+    ],
+    "currency": "EUR"
+  }
+}

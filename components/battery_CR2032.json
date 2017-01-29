@@ -1,0 +1,15 @@
+{
+  "id": "battery_CR2032",
+  "description": "battery CR2032",
+  "manufacturer": "various",
+  "suppliers": [
+    {
+      "supplierId": "local",
+      "price": {
+        "value": 1,
+        "currency": "EUR"
+      },
+      "packageSize": 1
+    }
+  ]
+}

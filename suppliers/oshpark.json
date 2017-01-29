@@ -1,0 +1,10 @@
+{
+  "id": "oshpark",
+  "name": "OSH Park",
+  "shippingFee": {
+    "valueFee": [
+      {"value": 0, "fee": 0}
+    ],
+    "currency": "USD"
+  }
+}

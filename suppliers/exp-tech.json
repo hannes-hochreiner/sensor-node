@@ -3,7 +3,8 @@
   "name": "EXP-TECH",
   "shippingFee": {
     "valueFee": [
-      {"value": 0, "fee": 3.5}
+      {"value": 0, "fee": 3.5},
+      {"value": 100, "fee": 0}
     ],
     "currency": "EUR"
   }
