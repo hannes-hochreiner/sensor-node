@@ -17,5 +17,8 @@
       },
       "packageSize": 1
     }
+  ],
+  "additionalComponents": [
+    "battery_CR2032"
   ]
 }

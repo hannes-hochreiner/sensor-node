@@ -1,6 +1,57 @@
 import { default as parse } from "xml-parser";
 import { default as fs } from "fs";
 
+function _getComponent(id) {
+  return JSON.parse(fs.readFileSync(`../components/${id}.json`, "utf8"));
+}
+
+function getComponents(id) {
+  let res = [];
+
+  try {
+    let comp = _getComponent(id);
+
+    res.push(comp);
+
+    if (comp.additionalComponents) {
+      comp.additionalComponents.map(c => getComponents(c)).forEach(c => {
+        c.forEach(ic => res.push(ic));
+      });
+    }
+  } catch(e) {
+    res.push({id: id});
+  }
+
+  console.log(res);
+  return res;
+}
+
+function componentToLine(c) {
+  let out = [];
+
+  out.push(`${c.count}`);
+
+  if (c.description) {
+    out.push(`[${c.description}](${c.suppliers[0].supplierLink})`);
+  } else {
+    out.push(c.id);
+  }
+
+  if (c.manufacturer) {
+    out.push(`${c.manufacturer}`);
+  } else {
+    out.push("");
+  }
+
+  if (c.suppliers) {
+    out.push(`${c.suppliers[0].price.value}`);
+  } else {
+    out.push("");
+  }
+
+  return out.join("|") + "\n";
+}
+
 let xml = parse(fs.readFileSync("../kicad/sensor-node.xml", "utf8"));
 let components = xml.root.children.filter((c) => c.name === "components");
 
@@ -8,7 +59,7 @@ if (components.length !== 1) {
   throw new Error("Error finding components");
 }
 
-let comps = components[0].children.reduce((l, c) => {
+let comps = components[0].children.map(c => {
   let value = c.children.find(child => child.name === "value").content;
   let lib = c.children.find(child => child.name === "libsource").attributes.lib;
   let part = c.children.find(child => child.name === "libsource").attributes.part;
@@ -18,17 +69,15 @@ let comps = components[0].children.reduce((l, c) => {
     id += `_${value}`;
   }
 
-  if (l[id]) {
-    l[id].count += 1;
+  return getComponents(id);
+}).reduce((l, c) => {
+  return l.concat(c);
+}, []).reduce((l, c) => {
+  if (l[c.id]) {
+    l[c.id].count += 1;
   } else {
-    l[id] = {
-      value: value,
-      lib: lib,
-      part: part,
-      id: id,
-      count: 1,
-      footprint: c.children.find(child => child.name === "footprint").content
-    }
+    c.count = 1;
+    l[c.id] = c;
   }
 
   return l;
@@ -39,20 +88,18 @@ let out = "# BOM\n\n";
 out += "amount|description|manufacturer|price per unit / EUR\n";
 out += "------|-----------|------------|--------------------\n";
 
+let total = 0;
+
 Object.keys(comps).forEach(k => {
   let c = comps[k];
 
-  out += `${c.count}`;
+  out += componentToLine(c);
 
-  try {
-    let comp = JSON.parse(fs.readFileSync(`../components/${c.id}.json`, "utf8"));
-
-    out += `|[${comp.description}](${comp.suppliers[0].supplierLink})|${comp.manufacturer}|${comp.suppliers[0].price.value}`;
-  } catch (e) {
-    out += `|${c.id}|n/a|n/a`;
+  if (c.suppliers) {
+    total += c.suppliers[0].price.value * c.count;
   }
-
-  out += "\n";
 });
+
+out += `|**total**||**${Math.round(total * 100) / 100}**`
 
 fs.writeFileSync("../bom.md", out);

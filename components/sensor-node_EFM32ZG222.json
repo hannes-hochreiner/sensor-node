@@ -16,5 +16,9 @@
       },
       "packageSize": 1
     }
+  ],
+  "additionalComponents": [
+    "pcb_30x54",
+    "box"
   ]
 }

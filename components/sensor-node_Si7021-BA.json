@@ -15,5 +15,8 @@
       },
       "packageSize": 1
     }
+  ],
+  "additionalComponents": [
+    "header_1x5_straight"
   ]
 }
