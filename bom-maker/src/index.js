@@ -5,6 +5,10 @@ function _getComponent(id) {
   return JSON.parse(fs.readFileSync(`../components/${id}.json`, "utf8"));
 }
 
+function getSupplier(id) {
+  return JSON.parse(fs.readFileSync(`../suppliers/${id}.json`, "utf8"));
+}
+
 function getComponents(id) {
   let res = [];
 
@@ -91,7 +95,7 @@ let out = "# BOM\n\n";
 out += "amount|description|manufacturer|price per unit / EUR\n";
 out += "------|-----------|------------|--------------------\n";
 
-let total = 0;
+let total = {};
 
 Object.keys(comps).forEach(k => {
   let c = comps[k];
@@ -99,10 +103,49 @@ Object.keys(comps).forEach(k => {
   out += componentToLine(c);
 
   if (c.suppliers) {
-    total += c.suppliers[0].price.value * c.count;
+    if (total[c.suppliers[0].supplierId]) {
+      total[c.suppliers[0].supplierId] += c.suppliers[0].price.value * c.count;
+    } else {
+      total[c.suppliers[0].supplierId] = c.suppliers[0].price.value * c.count;
+    }
   }
 });
 
-out += `|**total**||**${Math.round(total * 100) / 100}**`
+out += `|**total**||**${Math.round(Object.keys(total).reduce((t, k) => t + total[k], 0) * 100) / 100}**`;
+
+let sensorCount = 3;
+
+total = {};
+out += `\n\n## Cost for ${sensorCount} sensors\n`;
+
+Object.keys(comps).forEach(k => {
+  let c = comps[k];
+  let price = c.suppliers[0].price.value * Math.ceil((c.count * sensorCount) / c.suppliers[0].packageSize) * c.suppliers[0].packageSize;
+
+  if (c.suppliers) {
+    if (total[c.suppliers[0].supplierId]) {
+      total[c.suppliers[0].supplierId] += price;
+    } else {
+      total[c.suppliers[0].supplierId] = price;
+    }
+  }
+});
+
+out += "supplier|price of goods|shipping|total\n";
+out += "--------|--------------|--------|-----\n";
+
+let sum = 0;
+
+Object.keys(total).forEach(k => {
+  let sup = getSupplier(k);
+  let price = total[k];
+  let idx = sup.shippingFee.valueFee.findIndex(f => f.value > price);
+  let shipping = idx < 1 ? sup.shippingFee.valueFee[0].fee : sup.shippingFee.valueFee[idx - 1].fee;
+
+  out += `${sup.name}|${price}|${shipping}|${price + shipping}\n`;
+  sum += price + shipping;
+});
+
+out += `**total**|||${sum}\n`;
 
 fs.writeFileSync("../bom.md", out);

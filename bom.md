@@ -20,3 +20,13 @@ amount|description|manufacturer|price per unit / EUR
 1|[header 1x5 straight](https://hbe-shop.de/Art-1593414-MULTICOMP-2211S-05G-STECKER1-REIHVERT5KONT)|Multicomp|0.17
 1|[Cortex Debug shrouded header](https://www.conrad.de/de/stiftleiste-rastermass-127-mm-polzahl-gesamt-10-w-p-products-1-st-1403360.html)|W+P|0.65
 |**total**||**22.11**
+
+## Cost for 3 sensors
+supplier|price of goods|shipping|total
+--------|--------------|--------|-----
+HBE|30.249999999999996|5.95|36.199999999999996
+OSH Park|12|0|12
+Conrad|3.72|5.95|9.67
+local shop|3|0|3
+EXP-TECH|22.5|3.5|26
+**total**|||86.87
