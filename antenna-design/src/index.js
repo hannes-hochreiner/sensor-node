@@ -4,8 +4,8 @@ import * as d3f from "d3-format";
 let f = d3f.format(".3s");
 
 console.log("Antenna Design");
-let sideA = 25e-3;
-let sideB = 25e-3;
+let sideA = 22e-3;
+let sideB = 26e-3;
 let width = 1.5e-3;
 let height = 70e-6;
 
