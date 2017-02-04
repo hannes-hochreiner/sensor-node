@@ -241,9 +241,6 @@ Text Label 3450 3300 0    60   ~ 0
 SCL
 Text Label 3450 3200 0    60   ~ 0
 SDA
-NoConn ~ 4850 2700
-NoConn ~ 4950 2700
-NoConn ~ 5050 2700
 NoConn ~ 5150 2700
 NoConn ~ 5450 2700
 NoConn ~ 5550 2700
@@ -779,4 +776,10 @@ Wire Wire Line
 Wire Wire Line
 	7850 3900 8100 3900
 NoConn ~ 10550 3900
+Text Label 4950 2700 1    60   ~ 0
+RAD_INT
+Text Label 4850 2700 1    60   ~ 0
+RAD_ENABLE
+Text Label 5050 2700 1    60   ~ 0
+~SEN_ENABLE
 $EndSCHEMATC
