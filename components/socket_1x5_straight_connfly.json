@@ -1,0 +1,19 @@
+{
+  "id": "socket_1x5_straight_connfly",
+  "description": "socket 0.25 x 1x20 straight",
+  "manufacturer": "Connfly",
+  "manufacturerItemNumber": "93040C2",
+  "suppliers": [
+    {
+      "supplierId": "voelkner",
+      "supplierItemNumber": "Y606801",
+      "supplierLink": "https://www.voelkner.de/products/882107/Connfly-Buchsenleiste-Praezision-Anzahl-Reihen-1-Polzahl-je-Reihe-20-93040C2-1-St..html",
+      "datasheet": "http://downloads.cdn.re-in.de/1300000-1399999/001389869-da-01-en-BUCHSENLEISTE_DS1002_01_1_20V13.pdf",
+      "price": {
+        "value": 0.13,
+        "currency": "EUR"
+      },
+      "packageSize": 4
+    }
+  ]
+}

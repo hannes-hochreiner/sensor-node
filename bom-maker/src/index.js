@@ -51,8 +51,10 @@ function componentToLine(c) {
   }
 
   if (c.suppliers) {
+    out.push(`${c.suppliers[0].supplierId}`);
     out.push(`${c.suppliers[0].price.value}`);
   } else {
+    out.push("");
     out.push("");
   }
 
@@ -92,8 +94,8 @@ let comps = components[0].children.map(c => {
 
 let out = "# BOM\n\n";
 
-out += "amount|description|manufacturer|price per unit / EUR\n";
-out += "------|-----------|------------|--------------------\n";
+out += "amount|description|manufacturer|supplier|price per unit / EUR\n";
+out += "------|-----------|------------|--------|--------------------\n";
 
 let total = {};
 
@@ -111,7 +113,7 @@ Object.keys(comps).forEach(k => {
   }
 });
 
-out += `|**total**||**${Math.round(Object.keys(total).reduce((t, k) => t + total[k], 0) * 100) / 100}**`;
+out += `|**total**|||**${Math.round(Object.keys(total).reduce((t, k) => t + total[k], 0) * 100) / 100}**`;
 
 let sensorCount = 3;
 
@@ -142,10 +144,10 @@ Object.keys(total).forEach(k => {
   let idx = sup.shippingFee.valueFee.findIndex(f => f.value > price);
   let shipping = idx < 1 ? sup.shippingFee.valueFee[0].fee : sup.shippingFee.valueFee[idx - 1].fee;
 
-  out += `${sup.name}|${price}|${shipping}|${price + shipping}\n`;
+  out += `${sup.name}|${Math.round(price * 100) / 100}|${shipping}|${Math.round((price + shipping) * 100) / 100}\n`;
   sum += price + shipping;
 });
 
-out += `**total**|||${sum}\n`;
+out += `**total**|||${Math.round(sum * 100) / 100}\n`;
 
 fs.writeFileSync("../bom.md", out);

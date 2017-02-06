@@ -4,6 +4,17 @@
   "manufacturer": "various",
   "suppliers": [
     {
+      "supplierId": "voelkner",
+      "supplierItemNumber": "Y731401",
+      "supplierLink": "https://www.voelkner.de/products/770689/HyCell-Knopfzelle-CR-2032-Lithium-CR-2032-200-mAh-3-V-2-St..html",
+      "datasheet": "http://downloads.cdn.re-in.de/1300000-1399999/001305479-da-01-en-HYCELL_LITHIUM_KNOPFZELLE_CR_2032__2ER.pdf",
+      "price": {
+        "value": 0.45,
+        "currency": "EUR"
+      },
+      "packageSize": 2
+    },
+    {
       "supplierId": "local",
       "price": {
         "value": 1,

@@ -1,0 +1,19 @@
+{
+  "id": "header_1x5_straight_bkelectronic",
+  "description": "header 1x5 straight",
+  "manufacturer": "BKLElectronic",
+  "manufacturerItemNumber": "10120536",
+  "suppliers": [
+    {
+      "supplierId": "voelkner",
+      "supplierItemNumber": "D19274",
+      "supplierLink": "https://www.voelkner.de/products/130623/Praezisions-Stiftleiste-1x20-Verg-Rm-2-5.html",
+      "datasheet": "http://downloads.cdn.re-in.de/725000-749999/741307-da-01-en-PRAEZISIONS_STIFTLEISTE_1X20_VERG_RM2_54.pdf",
+      "price": {
+        "value": 0.37,
+        "currency": "EUR"
+      },
+      "packageSize": 4
+    }
+  ]
+}

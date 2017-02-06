@@ -1,0 +1,11 @@
+{
+  "id": "voelkner",
+  "name": "Voelkner",
+  "shippingFee": {
+    "valueFee": [
+      {"value": 0, "fee": 4.95},
+      {"value": 150, "fee": 0}
+    ],
+    "currency": "EUR"
+  }
+}

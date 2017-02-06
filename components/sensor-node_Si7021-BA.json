@@ -17,6 +17,7 @@
     }
   ],
   "additionalComponents": [
-    "header_1x5_straight"
+    "header_1x5_straight_bkelectronic",
+    "socket_1x5_straight_connfly"
   ]
 }

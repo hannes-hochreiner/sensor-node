@@ -7,6 +7,17 @@
   "datasheet": "http://www.renata.com/fileadmin/downloads/productsheets/battery_holders/HU2032-LF.pdf",
   "suppliers": [
     {
+      "supplierId": "voelkner",
+      "supplierItemNumber": "X37895",
+      "supplierLink": "https://www.voelkner.de/products/8982/Knopfzellen-Batteriehalter-Hu2032-Lf.html",
+      "datasheet": "http://downloads.cdn.re-in.de/650000-674999/650612-da-01-en-KNOPFZELLEN_BATTERIEHALTER_HU2032_LF.pdf",
+      "price": {
+        "value": 0.59,
+        "currency": "EUR"
+      },
+      "packageSize": 1
+    },
+    {
       "supplierId": "conrad",
       "supplierItemNumber": "650612 - 62",
       "supplierLink": "https://www.conrad.de/de/knopfzellenhalter-1-cr-2032-horizontal-durchsteckmontage-tht-l-x-b-x-h-285-x-20-x-87-mm-renata-701106-650612.html",
