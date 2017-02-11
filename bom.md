@@ -14,19 +14,19 @@ amount|description|manufacturer|supplier|price per unit / EUR
 2|[capacitor 1pF](https://hbe-shop.de/Art-7568398-AVX-08052U1R0BAT2A-HF-KONDENSATOR-C0G-NP0-1PF-200V-0805)|AVX|hbe|0.7
 2|[capacitor 1µF](https://hbe-shop.de/Art-1759422-MULTICOMP-MC0805F105Z160CT-KONDENSATOR-MLCC-Y5V-1UF-16V-0805)|Multicomp|hbe|0.04
 4|[capacitor 0.1µF](https://hbe-shop.de/Art-1759167-MULTICOMP-MC0805F104Z250CT-KONDENSATOR-MLCC-Y5V-100NF-0805)|Multicomp|hbe|0.02
-3|[capacitor 10µF](https://hbe-shop.de/Art-2320852-MULTICOMP-MC0805X106K6R3CT-KONDENSATOR-MLCC-X5R-10UF-63V-0805)|Multicomp|hbe|0.08
+4|[capacitor 10µF](https://hbe-shop.de/Art-2320852-MULTICOMP-MC0805X106K6R3CT-KONDENSATOR-MLCC-X5R-10UF-63V-0805)|Multicomp|hbe|0.08
 2|[capacitor 10nF](https://hbe-shop.de/Art-1759246-MULTICOMP-MC0805B103K500CT-KONDENSATOR-MLCC-X7R-10NF-50V-0805)|Multicomp|hbe|0.02
 1|[Si7021 humidity sensor breakout board](http://www.exp-tech.de/adafruit-si7021-temperature-humidity-sensor-breakout-board)|Adafruit|exp-tech|7.5
 1|[header 1x5 straight](https://www.voelkner.de/products/130623/Praezisions-Stiftleiste-1x20-Verg-Rm-2-5.html)|BKLElectronic|voelkner|0.37
 1|[socket 0.25 x 1x20 straight](https://www.voelkner.de/products/882107/Connfly-Buchsenleiste-Praezision-Anzahl-Reihen-1-Polzahl-je-Reihe-20-93040C2-1-St..html)|Connfly|voelkner|0.13
 1|[Cortex Debug shrouded header](https://www.voelkner.de/products/877289/W-P-Products-Stiftleiste-Rastermass-1.27-mm-Polzahl-Gesamt-10-1-St..html)|W+P|voelkner|0.61
-|**total**|||**21.85**
+|**total**|||**21.93**
 
 ## Cost for 3 sensors
 supplier|price of goods|shipping|total
 --------|--------------|--------|-----
-HBE|29.74|5.95|35.69
+HBE|30.54|5.95|36.49
 OSH Park|12|0|12
 Voelkner|7.4|4.95|12.35
 EXP-TECH|22.5|3.5|26
-**total**|||86.04
+**total**|||86.84

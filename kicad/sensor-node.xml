@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/home/hannes/Repository/sensor-node/kicad/sensor-node.sch</source>
-    <date>Sat Jan 28 19:51:37 2017</date>
+    <date>Sat Feb 11 18:02:44 2017</date>
     <tool>Eeschema 4.0.4-1.fc25-product</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -154,7 +154,7 @@
     </comp>
     <comp ref="SBA1">
       <value>Si7021-BA</value>
-      <footprint>Pin_Headers:Pin_Header_Straight_1x05</footprint>
+      <footprint>sensor-node:Si7021BA</footprint>
       <libsource lib="sensor-node" part="Si7021-BA"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>5879DD92</tstamp>
@@ -172,6 +172,13 @@
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>58850DBC</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>10µF</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>589EE79E</tstamp>
     </comp>
   </components>
   <libparts>
@@ -353,81 +360,84 @@
     <net code="2" name="Net-(CD1-Pad7)">
       <node ref="CD1" pin="7"/>
     </net>
-    <net code="3" name="/SWCLK">
+    <net code="3" name="GND">
+      <node ref="C15" pin="1"/>
+      <node ref="CD1" pin="3"/>
+      <node ref="S1" pin="2"/>
+      <node ref="BT1" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="EFM1" pin="44"/>
+      <node ref="C4" pin="2"/>
+      <node ref="C12" pin="2"/>
+      <node ref="C11" pin="1"/>
+      <node ref="C10" pin="2"/>
+      <node ref="C13" pin="2"/>
+      <node ref="C6" pin="1"/>
+      <node ref="C9" pin="2"/>
+      <node ref="CD1" pin="5"/>
+      <node ref="CD1" pin="9"/>
+      <node ref="C7" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="EFM1" pin="18"/>
+      <node ref="C5" pin="2"/>
+      <node ref="EFM1" pin="5"/>
+    </net>
+    <net code="4" name="/SWCLK">
       <node ref="CD1" pin="4"/>
       <node ref="EFM1" pin="37"/>
     </net>
-    <net code="4" name="/SWDIO">
-      <node ref="CD1" pin="2"/>
-      <node ref="EFM1" pin="38"/>
+    <net code="5" name="/SDA">
+      <node ref="S1" pin="6"/>
+      <node ref="EFM1" pin="1"/>
+      <node ref="SBA1" pin="5"/>
+      <node ref="R1" pin="1"/>
     </net>
-    <net code="5" name="+3V3">
-      <node ref="C9" pin="1"/>
-      <node ref="SBA1" pin="1"/>
-      <node ref="R2" pin="2"/>
-      <node ref="R1" pin="2"/>
-      <node ref="C7" pin="1"/>
-      <node ref="C10" pin="1"/>
-      <node ref="BT1" pin="1"/>
+    <net code="6" name="/SWDIO">
+      <node ref="EFM1" pin="38"/>
+      <node ref="CD1" pin="2"/>
+    </net>
+    <net code="7" name="+3V3">
+      <node ref="EFM1" pin="28"/>
+      <node ref="EFM1" pin="4"/>
+      <node ref="EFM1" pin="22"/>
       <node ref="EFM1" pin="19"/>
-      <node ref="C5" pin="1"/>
+      <node ref="S1" pin="5"/>
+      <node ref="C10" pin="1"/>
+      <node ref="L1" pin="1"/>
+      <node ref="BT1" pin="1"/>
+      <node ref="R1" pin="2"/>
+      <node ref="EFM1" pin="43"/>
+      <node ref="R2" pin="2"/>
       <node ref="EFM1" pin="23"/>
       <node ref="C13" pin="1"/>
       <node ref="C12" pin="1"/>
-      <node ref="C3" pin="1"/>
-      <node ref="EFM1" pin="28"/>
+      <node ref="SBA1" pin="1"/>
       <node ref="CD1" pin="1"/>
-      <node ref="L1" pin="1"/>
-      <node ref="C4" pin="1"/>
-      <node ref="S1" pin="5"/>
       <node ref="C8" pin="1"/>
+      <node ref="C4" pin="1"/>
       <node ref="C6" pin="2"/>
-      <node ref="EFM1" pin="22"/>
-      <node ref="EFM1" pin="4"/>
-      <node ref="EFM1" pin="43"/>
+      <node ref="C5" pin="1"/>
+      <node ref="C3" pin="1"/>
+      <node ref="C9" pin="1"/>
+      <node ref="C7" pin="1"/>
+      <node ref="C15" pin="2"/>
     </net>
-    <net code="6" name="Net-(SBA1-Pad2)">
+    <net code="8" name="Net-(SBA1-Pad2)">
       <node ref="SBA1" pin="2"/>
     </net>
-    <net code="7" name="/SDA">
-      <node ref="EFM1" pin="1"/>
-      <node ref="R1" pin="1"/>
-      <node ref="S1" pin="6"/>
-      <node ref="SBA1" pin="5"/>
-    </net>
-    <net code="8" name="/SCL">
+    <net code="9" name="/SCL">
       <node ref="EFM1" pin="2"/>
-      <node ref="SBA1" pin="4"/>
-      <node ref="R2" pin="1"/>
       <node ref="S1" pin="7"/>
+      <node ref="R2" pin="1"/>
+      <node ref="SBA1" pin="4"/>
     </net>
-    <net code="9" name="/~SEN_ENABLE">
+    <net code="10" name="/~SEN_ENABLE">
       <node ref="SBA1" pin="3"/>
+      <node ref="EFM1" pin="46"/>
     </net>
-    <net code="10" name="Net-(S1-Pad10)">
+    <net code="11" name="Net-(S1-Pad10)">
       <node ref="S1" pin="10"/>
-    </net>
-    <net code="11" name="GND">
-      <node ref="S1" pin="2"/>
-      <node ref="EFM1" pin="5"/>
-      <node ref="EFM1" pin="18"/>
-      <node ref="C9" pin="2"/>
-      <node ref="C13" pin="2"/>
-      <node ref="C12" pin="2"/>
-      <node ref="C10" pin="2"/>
-      <node ref="BT1" pin="2"/>
-      <node ref="C7" pin="2"/>
-      <node ref="EFM1" pin="44"/>
-      <node ref="C6" pin="1"/>
-      <node ref="C4" pin="2"/>
-      <node ref="C2" pin="2"/>
-      <node ref="C8" pin="2"/>
-      <node ref="C11" pin="1"/>
-      <node ref="C5" pin="2"/>
-      <node ref="C3" pin="2"/>
-      <node ref="CD1" pin="3"/>
-      <node ref="CD1" pin="5"/>
-      <node ref="CD1" pin="9"/>
     </net>
     <net code="12" name="Net-(C11-Pad2)">
       <node ref="EFM1" pin="29"/>
@@ -437,123 +447,116 @@
       <node ref="S1" pin="1"/>
     </net>
     <net code="14" name="/SWO">
-      <node ref="CD1" pin="6"/>
       <node ref="EFM1" pin="39"/>
+      <node ref="CD1" pin="6"/>
     </net>
-    <net code="15" name="Net-(EFM1-Pad48)">
+    <net code="15" name="/RAD_ENABLE">
       <node ref="EFM1" pin="48"/>
+      <node ref="S1" pin="8"/>
     </net>
-    <net code="16" name="Net-(EFM1-Pad47)">
+    <net code="16" name="/RAD_INT">
+      <node ref="S1" pin="9"/>
       <node ref="EFM1" pin="47"/>
     </net>
     <net code="17" name="Net-(EFM1-Pad27)">
       <node ref="EFM1" pin="27"/>
     </net>
     <net code="18" name="Net-(C1-Pad1)">
-      <node ref="L1" pin="2"/>
-      <node ref="C2" pin="1"/>
-      <node ref="S1" pin="4"/>
-      <node ref="S1" pin="3"/>
       <node ref="C14" pin="2"/>
-      <node ref="C1" pin="1"/>
+      <node ref="L1" pin="2"/>
       <node ref="C1" pin="2"/>
+      <node ref="C1" pin="1"/>
+      <node ref="S1" pin="3"/>
+      <node ref="S1" pin="4"/>
+      <node ref="C2" pin="1"/>
       <node ref="C14" pin="1"/>
     </net>
     <net code="19" name="Net-(EFM1-Pad17)">
       <node ref="EFM1" pin="17"/>
     </net>
-    <net code="20" name="/RAD_INT">
-      <node ref="S1" pin="9"/>
-    </net>
-    <net code="21" name="/RAD_ENABLE">
-      <node ref="S1" pin="8"/>
-    </net>
-    <net code="22" name="Net-(EFM1-Pad10)">
+    <net code="20" name="Net-(EFM1-Pad10)">
       <node ref="EFM1" pin="10"/>
     </net>
-    <net code="23" name="Net-(EFM1-Pad12)">
+    <net code="21" name="Net-(EFM1-Pad12)">
       <node ref="EFM1" pin="12"/>
     </net>
-    <net code="24" name="Net-(EFM1-Pad41)">
+    <net code="22" name="Net-(EFM1-Pad41)">
       <node ref="EFM1" pin="41"/>
     </net>
-    <net code="25" name="Net-(EFM1-Pad31)">
+    <net code="23" name="Net-(EFM1-Pad31)">
       <node ref="EFM1" pin="31"/>
     </net>
-    <net code="26" name="Net-(EFM1-Pad21)">
+    <net code="24" name="Net-(EFM1-Pad21)">
       <node ref="EFM1" pin="21"/>
     </net>
-    <net code="27" name="Net-(EFM1-Pad11)">
+    <net code="25" name="Net-(EFM1-Pad11)">
       <node ref="EFM1" pin="11"/>
     </net>
-    <net code="28" name="Net-(EFM1-Pad40)">
+    <net code="26" name="Net-(EFM1-Pad40)">
       <node ref="EFM1" pin="40"/>
     </net>
-    <net code="29" name="Net-(EFM1-Pad30)">
+    <net code="27" name="Net-(EFM1-Pad30)">
       <node ref="EFM1" pin="30"/>
     </net>
-    <net code="30" name="Net-(EFM1-Pad20)">
+    <net code="28" name="Net-(EFM1-Pad20)">
       <node ref="EFM1" pin="20"/>
     </net>
-    <net code="31" name="Net-(EFM1-Pad32)">
+    <net code="29" name="Net-(EFM1-Pad32)">
       <node ref="EFM1" pin="32"/>
     </net>
-    <net code="32" name="Net-(EFM1-Pad9)">
+    <net code="30" name="Net-(EFM1-Pad9)">
       <node ref="EFM1" pin="9"/>
     </net>
-    <net code="33" name="Net-(EFM1-Pad8)">
+    <net code="31" name="Net-(EFM1-Pad8)">
       <node ref="EFM1" pin="8"/>
     </net>
-    <net code="34" name="Net-(EFM1-Pad7)">
+    <net code="32" name="Net-(EFM1-Pad7)">
       <node ref="EFM1" pin="7"/>
     </net>
-    <net code="35" name="Net-(EFM1-Pad6)">
+    <net code="33" name="Net-(EFM1-Pad6)">
       <node ref="EFM1" pin="6"/>
     </net>
-    <net code="36" name="Net-(EFM1-Pad3)">
+    <net code="34" name="Net-(EFM1-Pad3)">
       <node ref="EFM1" pin="3"/>
     </net>
-    <net code="37" name="Net-(EFM1-Pad46)">
-      <node ref="EFM1" pin="46"/>
-    </net>
-    <net code="38" name="Net-(EFM1-Pad36)">
+    <net code="35" name="Net-(EFM1-Pad36)">
       <node ref="EFM1" pin="36"/>
     </net>
-    <net code="39" name="Net-(EFM1-Pad26)">
+    <net code="36" name="Net-(EFM1-Pad26)">
       <node ref="EFM1" pin="26"/>
     </net>
-    <net code="40" name="/~RESET">
+    <net code="37" name="/~RESET">
       <node ref="EFM1" pin="16"/>
       <node ref="CD1" pin="10"/>
     </net>
-    <net code="41" name="Net-(EFM1-Pad45)">
+    <net code="38" name="Net-(EFM1-Pad45)">
       <node ref="EFM1" pin="45"/>
     </net>
-    <net code="42" name="Net-(EFM1-Pad35)">
+    <net code="39" name="Net-(EFM1-Pad35)">
       <node ref="EFM1" pin="35"/>
     </net>
-    <net code="43" name="Net-(EFM1-Pad25)">
+    <net code="40" name="Net-(EFM1-Pad25)">
       <node ref="EFM1" pin="25"/>
     </net>
-    <net code="44" name="Net-(EFM1-Pad15)">
+    <net code="41" name="Net-(EFM1-Pad15)">
       <node ref="EFM1" pin="15"/>
     </net>
-    <net code="45" name="Net-(EFM1-Pad34)">
+    <net code="42" name="Net-(EFM1-Pad34)">
       <node ref="EFM1" pin="34"/>
     </net>
-    <net code="46" name="Net-(EFM1-Pad24)">
+    <net code="43" name="Net-(EFM1-Pad24)">
       <node ref="EFM1" pin="24"/>
     </net>
-    <net code="47" name="Net-(EFM1-Pad14)">
+    <net code="44" name="Net-(EFM1-Pad14)">
       <node ref="EFM1" pin="14"/>
     </net>
-    <net code="48" name="Net-(EFM1-Pad33)">
+    <net code="45" name="Net-(EFM1-Pad33)">
       <node ref="EFM1" pin="33"/>
     </net>
-    <net code="49" name="Net-(EFM1-Pad13)">
+    <net code="46" name="Net-(EFM1-Pad13)">
       <node ref="EFM1" pin="13"/>
     </net>
-    <net code="50" name="Net-(EFM1-Pad42)">
+    <net code="47" name="Net-(EFM1-Pad42)">
       <node ref="EFM1" pin="42"/>
     </net>
   </nets>
