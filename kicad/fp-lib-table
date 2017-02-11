@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name sensor-node)(type KiCad)(uri ${KIPRJMOD}/sensor-node.pretty)(options "")(descr ""))
+  (lib (name sensor-node-main)(type KiCad)(uri ${KIPRJMOD}/art.pretty)(options "")(descr ""))
 )
