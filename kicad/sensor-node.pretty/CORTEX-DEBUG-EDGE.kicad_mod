@@ -16,4 +16,9 @@
   (pad 5 smd rect (at 2.54 0) (size 0.6 3) (layers B.Cu B.Paste B.Mask))
   (pad 7 smd rect (at 3.81 0) (size 0.6 3) (layers B.Cu B.Paste B.Mask))
   (pad 9 smd rect (at 5.08 0) (size 0.6 3) (layers B.Cu B.Paste B.Mask))
+  (model ../../../../../home/hannes/Repository/sensor-node/freecad/shroudedHeader.wrl
+    (at (xyz -0.15 -0.065 -0.1375))
+    (scale (xyz 0.393701 0.393701 0.393701))
+    (rotate (xyz -90 0 0))
+  )
 )
