@@ -87,15 +87,23 @@ Hence the 10 kOhm would effectively only be about 8.5 kOhm.
 I figured that this should give me an additional margin, but it was also something I had to consider at the time of calculating the battery life.
 
 ### Antenna
+I chose to go with a loop antenna, because I have had problems with dipole antennas in the past.
+Often the dipole antennas worked fine on the breadboard, but in the finished product the performed considerable worse.
+Since I don't have the equipment to do an in-depth analysis, I left with (more or less educated) guesses.
+I attributed the drop in antenna performance to the fact that the breadboard was acting as a ground plane.
+In the finished sensor, there was no comparable ground plane and therefore the performance was worse.
+As I was trying to get the sensors as compact as possible and I did not want to go higher frequencies, I thought that loop antennas were my best shot.
+They are relatively small, don't need a ground plane and can be printed on the PCB.
+
 To tune the antenna size, I wrote a small program.
 I based my calculations of the loop inductance on a NIST paper ([E.B. Rosa "The self and mutual inductances of linear conductors," Bulletin of the Bureau of Standards, vol. 4, no. 2, p. 301](http://nvlpubs.nist.gov/nistpubs/bulletin/04/nbsbulletinv4n2p301_A2b.pdf)).
-This paper gave a closed form equation for the conductance of a rectangular loop, while in the application notes I could only find conversions to equivalent circular stuctures.
+This paper gave a closed form equation for the conductance of a rectangular loop, while in the application notes I could only find conversions to equivalent circular structures.
 The results were within 5 % of the approximations found in the application notes.
 
 I calculated the size of the feed loop based on two different application notes.
 [Microchip AN831](http://ww1.microchip.com/downloads/en/AppNotes/00831b.pdf) seemed to use a simpler approach basically neglecting the effect of the PCB.
 [Silicon Labs AN639](http://www.silabs.com/Support%20Documents/TechnicalDocs/AN639.pdf) took the effect of the PCB into account, but used empirical factors to do so.
-Altough I thought it would be good to take the effect of the PCB into account, I wasn't quite sure the assumptions for the empirical factors help for my design.
+Although I thought it would be good to take the effect of the PCB into account, I wasn't quite sure the assumptions for the empirical factors help for my design.
 
 With both approximations, I obtained about -8 dB for the estimated gain.
 The length of the feed loop came out quite differently (10.5 mm to 16.1 mm).
