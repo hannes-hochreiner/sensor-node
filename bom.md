@@ -4,7 +4,7 @@ amount|description|manufacturer|supplier|price per unit / EUR
 ------|-----------|------------|--------|--------------------
 1|[EFM32ZG222F32 QFP48 microcontroller](https://hbe-shop.de/Art-2503912-SILICON-LABS-EFM32ZG222F32-QFP48T-MCU-32BIT-CORTEX-M0-24MHZ-TQFP-48)|Silicon Labs|hbe|2.24
 1|[PCB 30mm x 54mm 2oz](http://docs.oshpark.com/services/two-layer-hhdc/)|OSH Park|oshpark|4
-1|[box](https://hbe-shop.de/Art-2444671-TAKACHI-TWN4-2-6W-MEHRZWECK-GEHAEUSE-ABS-WEISS)|Takachi|hbe|2.69
+1|box|local|local|3.5
 1|[CR2032 battery holder](https://www.voelkner.de/products/8982/Knopfzellen-Batteriehalter-Hu2032-Lf.html)|renata|voelkner|0.59
 1|[battery CR2032](https://www.voelkner.de/products/770689/HyCell-Knopfzelle-CR-2032-Lithium-CR-2032-200-mAh-3-V-2-St..html)|various|voelkner|0.45
 2|[resistor 10kOhm](https://hbe-shop.de/Art-2447553-MULTICOMP-MCWR08X1002FTL-DICKSCHICHTWIDERSTAND-10K-1-0125W-0805)|Multicomp|hbe|0.01
@@ -20,13 +20,14 @@ amount|description|manufacturer|supplier|price per unit / EUR
 1|[header 1x5 straight](https://www.voelkner.de/products/130623/Praezisions-Stiftleiste-1x20-Verg-Rm-2-5.html)|BKLElectronic|voelkner|0.37
 1|[socket 0.25 x 1x20 straight](https://www.voelkner.de/products/882107/Connfly-Buchsenleiste-Praezision-Anzahl-Reihen-1-Polzahl-je-Reihe-20-93040C2-1-St..html)|Connfly|voelkner|0.13
 1|[Cortex Debug shrouded header](https://www.voelkner.de/products/877289/W-P-Products-Stiftleiste-Rastermass-1.27-mm-Polzahl-Gesamt-10-1-St..html)|W+P|voelkner|0.61
-|**total**|||**21.93**
+|**total**|||**22.74**
 
 ## Cost for 3 sensors
 supplier|price of goods|shipping|total
 --------|--------------|--------|-----
-HBE|30.54|5.95|36.49
+HBE|21.37|8.45|29.82
 OSH Park|12|0|12
+local shop|10.5|0|10.5
 Voelkner|7.4|4.95|12.35
 EXP-TECH|22.5|3.5|26
-**total**|||86.84
+**total**|||90.67

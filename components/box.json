@@ -1,18 +1,12 @@
 {
   "id": "box",
   "description": "box",
-  "manufacturer": "Takachi",
-  "manufacturerItemNumber": "TWN4-2-6W",
-  "manufacturerLink": "http://www.takachi-enclosure.com/data/p_01plastic.html",
-  "datasheet": "http://www.takachi-enclosure.com/data/c15/c15_8190243245102.pdf",
+  "manufacturer": "local",
   "suppliers": [
     {
-      "supplierId": "hbe",
-      "supplierItemNumber": "2444671",
-      "supplierLink": "https://hbe-shop.de/Art-2444671-TAKACHI-TWN4-2-6W-MEHRZWECK-GEHAEUSE-ABS-WEISS",
-      "datasheet": "http://www.farnell.com/datasheets/1845941.pdf",
+      "supplierId": "local",
       "price": {
-        "value": 2.69,
+        "value": 3.5,
         "currency": "EUR"
       },
       "packageSize": 1
