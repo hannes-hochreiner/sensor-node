@@ -1,4 +1,4 @@
-update=Thu Jan 12 21:13:20 2017
+update=Sat Mar 11 09:20:29 2017
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,13 @@ LibName29=valves
 LibName30=sensor-node
 [general]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
