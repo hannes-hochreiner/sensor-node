@@ -4,3 +4,4 @@ kicad/*-cache.lib
 kicad/*.kicad_pcb-bak
 kicad/*.net
 npm-debug.log
+firmware/GNU ARM v4.9.3 - Debug
