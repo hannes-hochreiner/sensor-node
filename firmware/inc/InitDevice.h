@@ -37,8 +37,14 @@ extern void PORTIO_enter_DefaultMode_from_RESET(void);
 
 // $[User-defined pin name abstraction]
 
-#define GPIO_EM4WU0_PIN         (0)
-#define GPIO_EM4WU0_PORT        (gpioPortA)
+#define I2C0_SCL_PIN        (1)
+#define I2C0_SCL_PORT       (gpioPortA)
+
+#define I2C0_SDA_PIN        (0)
+#define I2C0_SDA_PORT       (gpioPortA)
+
+#define SENSOR_EN_PIN       (11)
+#define SENSOR_EN_PORT      (gpioPortE)
 
 // [User-defined pin name abstraction]$
 

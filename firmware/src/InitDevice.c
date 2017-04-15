@@ -20,6 +20,7 @@
 #include "em_chip.h"
 #include "em_assert.h"
 #include "em_gpio.h"
+#include "em_i2c.h"
 // [Library includes]$
 
 //==============================================================================
@@ -28,6 +29,7 @@
 extern void enter_DefaultMode_from_RESET(void) {
 	// $[Config Calls]
 	CMU_enter_DefaultMode_from_RESET();
+	I2C0_enter_DefaultMode_from_RESET();
 	PORTIO_enter_DefaultMode_from_RESET();
 	// [Config Calls]$
 
@@ -86,6 +88,9 @@ extern void CMU_enter_DefaultMode_from_RESET(void) {
 	/* No LF peripherals enabled */
 	// [LF clock tree setup]$
 	// $[Peripheral Clock enables]
+	/* Enable clock for I2C0 */
+	CMU_ClockEnable(cmuClock_I2C0, true);
+
 	/* Enable clock for GPIO by default */
 	CMU_ClockEnable(cmuClock_GPIO, true);
 
@@ -206,6 +211,13 @@ extern void WDOG_enter_DefaultMode_from_RESET(void) {
 extern void I2C0_enter_DefaultMode_from_RESET(void) {
 
 	// $[I2C0 initialization]
+	I2C_Init_TypeDef init = I2C_INIT_DEFAULT;
+
+	init.enable = 0;
+	init.master = 1;
+	init.freq = I2C_FREQ_FAST_MAX;
+	init.clhr = i2cClockHLRAsymetric;
+	I2C_Init(I2C0, &init);
 	// [I2C0 initialization]$
 
 }
@@ -275,9 +287,13 @@ extern void PORTIO_enter_DefaultMode_from_RESET(void) {
 
 	// $[Port A Configuration]
 
-	/* Pin PA0 is configured to Input enabled */
+	/* Pin PA0 is configured to Open-drain with pull-up and filter */
 	GPIO->P[0].MODEL = (GPIO->P[0].MODEL & ~_GPIO_P_MODEL_MODE0_MASK)
-			| GPIO_P_MODEL_MODE0_INPUT;
+			| GPIO_P_MODEL_MODE0_WIREDANDPULLUPFILTER;
+
+	/* Pin PA1 is configured to Open-drain with pull-up and filter */
+	GPIO->P[0].MODEL = (GPIO->P[0].MODEL & ~_GPIO_P_MODEL_MODE1_MASK)
+			| GPIO_P_MODEL_MODE1_WIREDANDPULLUPFILTER;
 	// [Port A Configuration]$
 
 	// $[Port B Configuration]
@@ -290,12 +306,24 @@ extern void PORTIO_enter_DefaultMode_from_RESET(void) {
 	// [Port D Configuration]$
 
 	// $[Port E Configuration]
+
+	/* Port E drive strength set to High (20 mA) */
+	GPIO->P[4].CTRL = (GPIO->P[4].CTRL & ~_GPIO_P_CTRL_DRIVEMODE_MASK)
+			| GPIO_P_CTRL_DRIVEMODE_HIGH;
+
+	/* Pin PE11 is configured to Open-source with pull-down */
+	GPIO->P[4].DOUT |= (1 << 11);
+	GPIO->P[4].MODEH = (GPIO->P[4].MODEH & ~_GPIO_P_MODEH_MODE11_MASK)
+			| GPIO_P_MODEH_MODE11_WIREDORPULLDOWN;
 	// [Port E Configuration]$
 
 	// $[Port F Configuration]
 	// [Port F Configuration]$
 
 	// $[Route Configuration]
+
+	/* Enable signals SCL, SDA */
+	I2C0->ROUTE |= I2C_ROUTE_SCLPEN | I2C_ROUTE_SDAPEN;
 	// [Route Configuration]$
 
 }
