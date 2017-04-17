@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:sensor-node-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -56,7 +57,7 @@ F 3 "" H 5050 3850 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Battery BT1
+L Battery-RESCUE-sensor-node BT1
 U 1 1 5877E2B9
 P 1100 3550
 F 0 "BT1" H 1200 3600 50  0000 L CNN
