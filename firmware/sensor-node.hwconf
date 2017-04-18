@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="EFM32ZG222F32" partId="mcu.arm.efm32.zg.efm32zg222f32">
   <mode name="DefaultMode">
+    <property object="AES" propertyId="ABPeripheral.included" value="true"/>
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
     <property object="GPIO" propertyId="ABPeripheral.included" value="true"/>
     <property object="I2C0" propertyId="ABPeripheral.included" value="true"/>
@@ -10,14 +11,12 @@
     <property object="PA0" propertyId="ports.settings.pinmode" value="Wired-and pullup filter"/>
     <property object="PA1" propertyId="ports.settings.pinmode" value="Wired-and pullup filter"/>
     <property object="PE11" propertyId="ports.settings.custompinname" value="~SENSOR_EN"/>
-    <property object="PE11" propertyId="ports.settings.dout" value="1"/>
-    <property object="PE11" propertyId="ports.settings.filter" value="Enabled"/>
-    <property object="PE11" propertyId="ports.settings.pinmode" value="Wired-or pull-down"/>
-    <property object="PE11" propertyId="ports.settings.pulldirection" value="Pullup"/>
-    <property object="PE11" propertyId="ports.settings.pullup" value="Enabled"/>
+    <property object="PE11" propertyId="ports.settings.pinmode" value="Wired-and drive"/>
     <property object="PORTIO" propertyId="portio.i2c0.enable.scl" value="Enabled"/>
     <property object="PORTIO" propertyId="portio.i2c0.enable.sda" value="Enabled"/>
     <property object="PortE" propertyId="ports.settings.drivemode" value="High (20 mA)"/>
+    <property object="RTC" propertyId="ABPeripheral.included" value="true"/>
+    <property object="RTC" propertyId="rtc.settings.usecompareregister0asmaxvalue" value="Disabled"/>
   </mode>
   <modeTransition>
     <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.source" value="RESET"/>

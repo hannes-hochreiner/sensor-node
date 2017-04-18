@@ -19,8 +19,10 @@
 #include "em_device.h"
 #include "em_chip.h"
 #include "em_assert.h"
+#include "em_aes.h"
 #include "em_gpio.h"
 #include "em_i2c.h"
+#include "em_rtc.h"
 // [Library includes]$
 
 //==============================================================================
@@ -29,6 +31,7 @@
 extern void enter_DefaultMode_from_RESET(void) {
 	// $[Config Calls]
 	CMU_enter_DefaultMode_from_RESET();
+	RTC_enter_DefaultMode_from_RESET();
 	I2C0_enter_DefaultMode_from_RESET();
 	PORTIO_enter_DefaultMode_from_RESET();
 	// [Config Calls]$
@@ -73,6 +76,12 @@ extern void CMU_enter_DefaultMode_from_RESET(void) {
 	// [HFXO enable]$
 
 	// $[LFACLK Setup]
+	/* Enable LFRCO oscillator */
+	CMU_OscillatorEnable(cmuOsc_LFRCO, true, true);
+
+	/* Select LFRCO as clock source for LFACLK */
+	CMU_ClockSelectSet(cmuClock_LFA, cmuSelect_LFRCO);
+
 	// [LFACLK Setup]$
 
 	// $[High Frequency Clock select]
@@ -85,11 +94,19 @@ extern void CMU_enter_DefaultMode_from_RESET(void) {
 	// [High Frequency Clock select]$
 
 	// $[LF clock tree setup]
-	/* No LF peripherals enabled */
+	/* Enable LF clocks */
+	CMU_ClockEnable(cmuClock_CORELE, true);
+	CMU_ClockSelectSet(cmuClock_LFA, cmuSelect_LFRCO);
 	// [LF clock tree setup]$
 	// $[Peripheral Clock enables]
+	/* Enable clock for AES */
+	CMU_ClockEnable(cmuClock_AES, true);
+
 	/* Enable clock for I2C0 */
 	CMU_ClockEnable(cmuClock_I2C0, true);
+
+	/* Enable clock for RTC */
+	CMU_ClockEnable(cmuClock_RTC, true);
 
 	/* Enable clock for GPIO by default */
 	CMU_ClockEnable(cmuClock_GPIO, true);
@@ -149,6 +166,12 @@ extern void IDAC0_enter_DefaultMode_from_RESET(void) {
 extern void RTC_enter_DefaultMode_from_RESET(void) {
 
 	// $[RTC_Init]
+	RTC_Init_TypeDef init = RTC_INIT_DEFAULT;
+
+	init.debugRun = 0;
+	init.comp0Top = 0;
+
+	RTC_Init(&init);
 	// [RTC_Init]$
 
 }
@@ -311,10 +334,9 @@ extern void PORTIO_enter_DefaultMode_from_RESET(void) {
 	GPIO->P[4].CTRL = (GPIO->P[4].CTRL & ~_GPIO_P_CTRL_DRIVEMODE_MASK)
 			| GPIO_P_CTRL_DRIVEMODE_HIGH;
 
-	/* Pin PE11 is configured to Open-source with pull-down */
-	GPIO->P[4].DOUT |= (1 << 11);
+	/* Pin PE11 is configured to Open-drain with alt. drive strength */
 	GPIO->P[4].MODEH = (GPIO->P[4].MODEH & ~_GPIO_P_MODEH_MODE11_MASK)
-			| GPIO_P_MODEH_MODE11_WIREDORPULLDOWN;
+			| GPIO_P_MODEH_MODE11_WIREDANDDRIVE;
 	// [Port E Configuration]$
 
 	// $[Port F Configuration]
