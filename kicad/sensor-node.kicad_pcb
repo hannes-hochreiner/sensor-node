@@ -1,7 +1,7 @@
 (kicad_pcb (version 4) (host pcbnew 4.0.6)
 
   (general
-    (links 0)
+    (links 89)
     (no_connects 0)
     (area 137.070999 57.395999 167.221001 111.546001)
     (thickness 0.8128)
@@ -37,7 +37,7 @@
   )
 
   (setup
-    (last_trace_width 0.25)
+    (last_trace_width 0.1524)
     (user_trace_width 0.25)
     (trace_clearance 0.1524)
     (zone_clearance 0.508)
@@ -1196,7 +1196,7 @@
   )
 
   (module sensor-node:mounting (layer F.Cu) (tedit 58F4EB22) (tstamp 58F4E89D)
-    (at 140.146 88.971)
+    (at 140.146 88.471)
     (zone_connect 2)
     (fp_text reference REF** (at 0 0.5) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
